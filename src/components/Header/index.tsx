@@ -1,18 +1,11 @@
 import React, { useState } from "react";
-import {
-  IconCalendar,
-  IconCloseMenu,
-  IconMenu,
-  IconPlanning,
-  IconReminder,
-  IconTodo,
-  Logo,
-} from "assets";
-import { Background, Container, DivLogin, DivNavBar, IconMenuButton, Navbar } from "./styles";
+import { IconCalendar, IconPlanning, IconReminder, IconTodo, Logo } from "assets";
+import { Background, Container, DivLogin, DivNavBar, MenuButton, Navbar } from "./styles";
 import Option from "./Option";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [classMenu, setClassMenu] = useState("menu");
 
   const featureOptions = [
     { optionName: "Todo List", Icon: IconTodo },
@@ -27,16 +20,25 @@ export default function Header() {
     { optionName: "Blog" },
   ];
 
+  const toggleOpen = () => {
+    setIsOpen(!isOpen);
+    setClassMenu(classMenu === "menu" ? "open-menu" : "menu");
+  };
+
   return (
     <>
-      {isOpen ? <Background onClick={() => setIsOpen(!isOpen)} /> : <></>}
+      {isOpen ? <Background onClick={toggleOpen} /> : <></>}
       <Container>
         <div id="snap-icon">
           <Logo />
         </div>
-        <IconMenuButton onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <IconCloseMenu /> : <IconMenu />}
-        </IconMenuButton>
+        <MenuButton onClick={toggleOpen}>
+          <div className={classMenu}>
+            <span className="line-one" />
+            <span className="line-two" />
+            <span className="line-three" />
+          </div>
+        </MenuButton>
 
         <DivNavBar isOpen={isOpen}>
           <Navbar isOpen={isOpen}>

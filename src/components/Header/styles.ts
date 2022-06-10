@@ -39,7 +39,10 @@ export const DivNavBar = styled.div<Props>`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  transition: width 300ms ease;
+
+  @media (max-width: 895px) {
+    transition: width 500ms ease;
+  }
 
   @media (max-width: 900px) {
     flex-direction: column;
@@ -68,7 +71,7 @@ export const Navbar = styled.nav<Props>`
     cursor: pointer;
 
     :hover {
-      text-shadow: -0.06ex 0 black, 0.06ex 0 black;
+      text-shadow: -0.01ex 0 black, 0.01ex 0 black;
     }
   }
 
@@ -76,6 +79,10 @@ export const Navbar = styled.nav<Props>`
     display: ${({ isOpen }) => (isOpen ? "flex" : "none")};
     flex-direction: column;
     align-items: flex-start;
+
+    h2:hover {
+      text-shadow: none;
+    }
   }
 `;
 
@@ -106,6 +113,10 @@ export const DivLogin = styled.div<Props>`
     width: 100%;
     gap: 2rem;
 
+    button:hover {
+      text-shadow: none;
+    }
+
     #register-button {
       width: 100%;
       color: ${({ isOpen }) => (isOpen ? "#000" : "transparent")};
@@ -113,14 +124,53 @@ export const DivLogin = styled.div<Props>`
   }
 `;
 
-export const IconMenuButton = styled.button`
-  display: none;
-  background: inherit;
-  border: none;
+export const MenuButton = styled.button`
+  width: 3.2rem;
+  height: 2.2rem;
   cursor: pointer;
   z-index: 3;
+  background: transparent;
+  border: none;
 
-  @media (max-width: 900px) {
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 3.2rem;
+    height: 2.2rem;
+    position: relative;
+  }
+
+  span {
+    width: 100%;
+    height: 0.2rem;
+    border-radius: 0.5rem;
+    background: #000;
     display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -52%);
+    transition: transform 0.5s, width 0.5s;
+  }
+
+  .menu .line-one {
+    transform: translate(-50%, -1.1rem);
+  }
+
+  .menu .line-three {
+    transform: translate(-50%, 0.8rem);
+  }
+
+  .open-menu .line-one {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  .open-menu .line-three {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  .open-menu .line-two {
+    width: 0;
   }
 `;

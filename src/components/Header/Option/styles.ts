@@ -14,6 +14,14 @@ export const DivOption = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
+
+  @media (min-width: 901px) {
+    :hover {
+      h2 {
+        text-shadow: -0.01ex 0 black, 0.01ex 0 black;
+      }
+    }
+  }
 `;
 
 export const Title = styled.div<TitleProps>`
