@@ -15,7 +15,8 @@ export default function Body() {
       <Main>
         <DivInfo>
           <Title>
-            Make <br /> remote work
+            <span>Make</span>
+            <span>remote work</span>
           </Title>
           <p id="description">
             Get your team in sync, no matter your location. Streamline processes, create team
@@ -30,7 +31,7 @@ export default function Body() {
           </DivClients>
         </DivInfo>
         <Picture>
-          <source media="(max-width: 800px)" srcSet={ImgHeroMobile} />
+          <source media="(max-width: 900px)" srcSet={ImgHeroMobile} />
           <img src={ImgHeroDesktop} alt="Homem usando notebook" />
         </Picture>
       </Main>
