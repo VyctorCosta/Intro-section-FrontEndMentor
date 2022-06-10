@@ -40,8 +40,20 @@ export default function Header() {
 
         <DivNavBar isOpen={isOpen}>
           <Navbar isOpen={isOpen}>
-            <Option title="Features" options={featureOptions} top="3.9rem" left="-8.3rem" />
-            <Option title="Company" options={companyOptions} top="3.9rem" width="13.5rem" />
+            <Option
+              title="Features"
+              options={featureOptions}
+              top="3.9rem"
+              left="-8.3rem"
+              isOpen={isOpen}
+            />
+            <Option
+              title="Company"
+              options={companyOptions}
+              top="3.9rem"
+              width="13.5rem"
+              isOpen={isOpen}
+            />
             <h2>Careers</h2>
             <h2>About</h2>
           </Navbar>

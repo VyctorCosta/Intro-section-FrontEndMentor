@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 interface Props {
-  isOpen: boolean;
+  isOpen?: boolean;
 }
 
 export const Background = styled.div`
@@ -39,21 +39,22 @@ export const DivNavBar = styled.div<Props>`
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  transition: width 300ms ease;
 
   @media (max-width: 900px) {
-    display: ${({ isOpen }) => (isOpen ? "flex" : "none")};
     flex-direction: column;
-    width: 23.75rem;
+    width: ${({ isOpen }) => (isOpen ? "23.75rem" : "0%")};
+    height: 100vh;
     background-color: #eee;
     z-index: 2;
     position: absolute;
     top: 0;
-    right: 0;
+    right: ${({ isOpen }) => (isOpen ? "0" : "-4.1rem")};
     padding: 9.5rem 2rem;
     align-items: flex-start;
     justify-content: flex-start;
     gap: 3rem;
-    height: 100vh;
+    overflow-x: hidden;
   }
 `;
 
@@ -73,7 +74,6 @@ export const Navbar = styled.nav<Props>`
 
   @media (max-width: 900px) {
     display: ${({ isOpen }) => (isOpen ? "flex" : "none")};
-    background-color: #eee;
     flex-direction: column;
     align-items: flex-start;
   }
@@ -108,6 +108,7 @@ export const DivLogin = styled.div<Props>`
 
     #register-button {
       width: 100%;
+      color: ${({ isOpen }) => (isOpen ? "#000" : "transparent")};
     }
   }
 `;

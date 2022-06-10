@@ -1,5 +1,5 @@
 import { ArrowDown, ArrowUp } from "assets";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { DivOption, DivOptions, Title, Item } from "./styles";
 
 type Option = {
@@ -13,14 +13,19 @@ interface Props {
   top: string;
   left?: string;
   width?: string;
+  isOpen: boolean;
 }
 
-export default function Option({ title, options, top, left, width }: Props) {
+export default function Option({ title, options, top, left, width, isOpen }: Props) {
   const [isSelected, setIsSelected] = useState(false);
 
   const toggleSelected = () => {
     setIsSelected(!isSelected);
   };
+
+  useEffect(() => {
+    if (!isOpen) setIsSelected(false);
+  }, [isOpen]);
 
   return (
     <>
