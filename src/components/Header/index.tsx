@@ -29,7 +29,7 @@ export default function Header() {
 
   return (
     <>
-      {isOpen ? <Background /> : <></>}
+      {isOpen ? <Background onClick={() => setIsOpen(!isOpen)} /> : <></>}
       <Container>
         <div id="snap-icon">
           <Logo />
