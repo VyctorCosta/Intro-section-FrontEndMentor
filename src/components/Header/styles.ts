@@ -125,6 +125,7 @@ export const DivLogin = styled.div<Props>`
 `;
 
 export const MenuButton = styled.button`
+  display: none;
   width: 3.2rem;
   height: 2.2rem;
   cursor: pointer;
@@ -172,5 +173,9 @@ export const MenuButton = styled.button`
 
   .open-menu .line-two {
     width: 0;
+  }
+
+  @media (max-width: 900px) {
+    display: block;
   }
 `;
