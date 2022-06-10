@@ -48,7 +48,7 @@ export const DivNavBar = styled.div<Props>`
     position: absolute;
     top: 0;
     right: 0;
-    padding: 2.5rem 2rem;
+    padding: 9.5rem 2rem;
     align-items: flex-start;
     justify-content: flex-start;
     gap: 3rem;
@@ -116,8 +116,7 @@ export const IconMenuButton = styled.button`
   background: inherit;
   border: none;
   cursor: pointer;
-  z-index: 2;
-  align-self: flex-end;
+  z-index: 3;
 
   @media (max-width: 900px) {
     display: block;
