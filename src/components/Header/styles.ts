@@ -10,7 +10,7 @@ export const Background = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
   position: absolute;
   left: 0;
-  z-index: 1;
+  z-index: 2;
 `;
 
 export const Container = styled.header`
@@ -49,7 +49,7 @@ export const DivNavBar = styled.div<Props>`
     width: ${({ isOpen }) => (isOpen ? "23.75rem" : "0%")};
     height: 100vh;
     background-color: #eee;
-    z-index: 2;
+    z-index: 3;
     position: absolute;
     top: 0;
     right: ${({ isOpen }) => (isOpen ? "0" : "-4.1rem")};
@@ -129,7 +129,7 @@ export const MenuButton = styled.button`
   width: 3.2rem;
   height: 2.2rem;
   cursor: pointer;
-  z-index: 3;
+  z-index: 4;
   background: transparent;
   border: none;
 

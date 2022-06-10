@@ -30,6 +30,12 @@ export const Title = styled.div<TitleProps>`
   gap: 1rem;
   user-select: none;
   cursor: pointer;
+
+  @media (min-width: 901px) {
+    h2 {
+      text-shadow: ${({ isSelected }) => (isSelected ? "-0.01ex 0 black, 0.01ex 0 black" : "none")};
+    }
+  }
 `;
 
 export const DivOptions = styled.div<DivOptionsProps>`
@@ -44,6 +50,7 @@ export const DivOptions = styled.div<DivOptionsProps>`
   top: ${({ top }) => top};
   left: ${({ left }) => (left ? left : 0)};
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+  z-index: 1;
 
   @media (max-width: 900px) {
     position: static;
