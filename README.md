@@ -24,3 +24,5 @@ yarn dev
 npm dev
 ```
 5. Abra [http://localhost:3000](http://localhost:3000) pelo navegador e veja o resultado
+
+6. Link do site hospedado na plataforma vercel: https://intro-section-nine.vercel.app/
