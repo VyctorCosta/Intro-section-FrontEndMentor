@@ -41,9 +41,10 @@ export const DivNavBar = styled.div<Props>`
   width: 100%;
 
   @media (max-width: 900px) {
+    display: ${({ isOpen }) => (isOpen ? "flex" : "none")};
     flex-direction: column;
     width: 23.75rem;
-    background-color: ${({ isOpen }) => (isOpen ? "#eee" : "rgba(238, 238, 238, 0)")};
+    background-color: #eee;
     z-index: 2;
     position: absolute;
     top: 0;

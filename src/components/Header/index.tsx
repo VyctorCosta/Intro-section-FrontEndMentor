@@ -37,22 +37,19 @@ export default function Header() {
         <IconMenuButton onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <IconCloseMenu /> : <IconMenu />}
         </IconMenuButton>
-        {isOpen ? (
-          <DivNavBar isOpen={isOpen}>
-            <Navbar isOpen={isOpen}>
-              <Option title="Features" options={featureOptions} top="3.9rem" left="-8.3rem" />
-              <Option title="Company" options={companyOptions} top="3.9rem" width="13.5rem" />
-              <h2>Careers</h2>
-              <h2>About</h2>
-            </Navbar>
-            <DivLogin isOpen={isOpen}>
-              <button>Login</button>
-              <button id="register-button">Register</button>
-            </DivLogin>
-          </DivNavBar>
-        ) : (
-          <></>
-        )}
+
+        <DivNavBar isOpen={isOpen}>
+          <Navbar isOpen={isOpen}>
+            <Option title="Features" options={featureOptions} top="3.9rem" left="-8.3rem" />
+            <Option title="Company" options={companyOptions} top="3.9rem" width="13.5rem" />
+            <h2>Careers</h2>
+            <h2>About</h2>
+          </Navbar>
+          <DivLogin isOpen={isOpen}>
+            <button>Login</button>
+            <button id="register-button">Register</button>
+          </DivLogin>
+        </DivNavBar>
       </Container>
     </>
   );
